@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, MuiThemeProvider, createMuiTheme  } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -17,8 +17,28 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import SimpleLineChart from './SimpleLineChart';
 import SimpleTable from './SimpleTable';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+
 
 const drawerWidth = 240;
+
+const tema = createMuiTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#ff4400',
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: '#0066ff',
+      main: '#0044ff',
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: '#ffcc00',
+    },
+    // error: will use the default color
+  },
+});
 
 const styles = theme => ({
   root: {
@@ -114,6 +134,7 @@ class Dashboard extends React.Component {
     const { classes } = this.props;
 
     return (
+      <MuiThemeProvider theme={tema}>
       <React.Fragment>
         <CssBaseline />
         <div className={classes.root}>
@@ -134,6 +155,7 @@ class Dashboard extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography
+              align="center"
                 component="h1"
                 variant="h6"
                 color="inherit"
@@ -147,6 +169,10 @@ class Dashboard extends React.Component {
                   <NotificationsIcon />
                 </Badge>
               </IconButton>
+              <IconButton color="inherit">
+                <AccountCircle />
+              </IconButton>
+              <p>Profile</p>
             </Toolbar>
           </AppBar>
           <Drawer
@@ -163,26 +189,27 @@ class Dashboard extends React.Component {
             </div>
             <Divider />
             <List>{mainListItems}</List>
-            <Divider />
-            <List>{secondaryListItems}</List>
+            {/* <Divider />
+            <List>{secondaryListItems}</List> */}
           </Drawer>
           <main className={classes.content}>
-            <div className={classes.appBarSpacer} />
-            <Typography variant="h4" gutterBottom component="h2">
-              Orders
-            </Typography>
-            <Typography component="div" className={classes.chartContainer}>
-              <SimpleLineChart />
-            </Typography>
-            <Typography variant="h4" gutterBottom component="h2">
-              Products
-            </Typography>
-            <div className={classes.tableContainer}>
-              <SimpleTable />
-            </div>
+            {/* <div className={classes.appBarSpacer} /> */}
+              {/* <Typography variant="h4" gutterBottom component="h2">
+                Orders
+              </Typography>
+              <Typography component="div" className={classes.chartContainer}>
+                <SimpleLineChart />
+              </Typography>
+              <Typography variant="h4" gutterBottom component="h2">
+                Products
+              </Typography>
+              <div className={classes.tableContainer}>
+                <SimpleTable />
+              </div> */}
           </main>
         </div>
       </React.Fragment>
+      </MuiThemeProvider>
     );
   }
 }
