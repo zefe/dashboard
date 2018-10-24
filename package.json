@@ -1,0 +1,58 @@
+{
+  "name": "marvin-dashboard",
+  "version": "1.0.0",
+  "description": "Marvin Insurance Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./webpack-prod.config.js",
+    "start": "webpack-dev-server --config ./webpack-dev.config.js --open"
+  },
+  "keywords": [
+    "React",
+    "Relativity6",
+    "Dashboard"
+  ],
+  "author": "Relativity6",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "dsv-loader": "^2.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^3.3.7",
+    "d3": "^3.5.17",
+    "lodash": "^4.17.10",
+    "react": "^16.4.2",
+    "react-bootstrap": "^0.32.3",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.4",
+    "recharts": "^1.3.4",
+    "@material-ui/core": "^3.3.0",
+    "@material-ui/icons": "^3.0.1"
+  }
+}

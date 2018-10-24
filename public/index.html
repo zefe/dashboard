@@ -1,0 +1,28 @@
+<!-- sourced from https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/svg+xml" href="icon.svg">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Relativity6 Demo</title>
+</head>
+
+<body>
+	<div id="root"></div>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+	<script>
+		if (window.location.host.includes("localhost")) {
+			const baseURL = "http://localhost:3000/";
+			const bundleScript = document.createElement('script');
+			bundleScript.src = baseURL + "dist/bundle.js";
+			document.getElementsByTagName('script')[0].parentNode.appendChild(bundleScript);
+		}
+	</script>
+</body>
+
+</html>

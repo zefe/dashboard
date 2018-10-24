@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+      "react",
+      "babel"
+  ],
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "env": {
+      "browser": true,
+      "node":true,
+      "es6": true
+  },
+  "rules": {
+      "strict": 0,
+      "babel/new-cap": 1,
+      "babel/no-invalid-this": 1,
+      "babel/object-curly-spacing": 1,
+      "babel/quotes": 1,
+      "babel/semi": 1,
+      "babel/no-unused-expressions": 1
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ]
+}
